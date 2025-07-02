@@ -1,0 +1,309 @@
+/* Fashion Store - Custom Styles with Material-UI */
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Custom CSS Variables for Fashion Store Theme */
+:root {
+  /* Primary Colors - Rosa/Pink Theme */
+  --fashion-primary: #E8B4B8;
+  --fashion-primary-dark: #D4949A;
+  --fashion-secondary: #F5F1ED;
+  --fashion-accent: #D4AF37;
+  
+  /* Neutral Colors */
+  --fashion-dark: #4A4A4A;
+  --fashion-light: #FFFFFF;
+  --fashion-gray-light: #F8F9FA;
+  --fashion-gray-medium: #6C757D;
+  
+  /* Gradients */
+  --fashion-gradient: linear-gradient(135deg, #E8B4B8 0%, #D4949A 100%);
+  --fashion-gradient-light: linear-gradient(135deg, #F5F1ED 0%, #E8B4B8 100%);
+  
+  /* Shadows */
+  --fashion-shadow: 0 4px 20px rgba(232, 180, 184, 0.15);
+  --fashion-shadow-hover: 0 8px 30px rgba(232, 180, 184, 0.25);
+  
+  /* Border Radius */
+  --fashion-radius: 12px;
+  --fashion-radius-lg: 16px;
+  
+  /* Transitions */
+  --fashion-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Global Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  line-height: 1.6;
+  color: var(--fashion-dark);
+  background-color: var(--fashion-light);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography */
+.fashion-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.fashion-subtitle {
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.fashion-text {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+}
+
+/* Custom Material-UI Theme Overrides */
+.fashion-gradient-bg {
+  background: var(--fashion-gradient);
+}
+
+.fashion-gradient-light-bg {
+  background: var(--fashion-gradient-light);
+}
+
+.fashion-shadow {
+  box-shadow: var(--fashion-shadow);
+}
+
+.fashion-shadow-hover {
+  box-shadow: var(--fashion-shadow-hover);
+  transition: var(--fashion-transition);
+}
+
+.fashion-shadow-hover:hover {
+  box-shadow: var(--fashion-shadow-hover);
+  transform: translateY(-2px);
+}
+
+/* Custom Button Styles */
+.fashion-button-primary {
+  background: var(--fashion-gradient) !important;
+  color: white !important;
+  border: none !important;
+  border-radius: var(--fashion-radius) !important;
+  padding: 12px 24px !important;
+  font-weight: 600 !important;
+  text-transform: none !important;
+  transition: var(--fashion-transition) !important;
+}
+
+.fashion-button-primary:hover {
+  background: var(--fashion-primary-dark) !important;
+  transform: translateY(-1px);
+  box-shadow: var(--fashion-shadow-hover);
+}
+
+.fashion-button-outline {
+  background: transparent !important;
+  color: var(--fashion-primary-dark) !important;
+  border: 2px solid var(--fashion-primary) !important;
+  border-radius: var(--fashion-radius) !important;
+  padding: 10px 22px !important;
+  font-weight: 600 !important;
+  text-transform: none !important;
+  transition: var(--fashion-transition) !important;
+}
+
+.fashion-button-outline:hover {
+  background: var(--fashion-primary) !important;
+  color: white !important;
+  transform: translateY(-1px);
+}
+
+/* Card Styles */
+.fashion-card {
+  border-radius: var(--fashion-radius-lg) !important;
+  box-shadow: var(--fashion-shadow) !important;
+  border: none !important;
+  transition: var(--fashion-transition) !important;
+}
+
+.fashion-card:hover {
+  box-shadow: var(--fashion-shadow-hover) !important;
+  transform: translateY(-4px);
+}
+
+/* Product Card Styles */
+.fashion-product-card {
+  border-radius: var(--fashion-radius-lg) !important;
+  overflow: hidden !important;
+  transition: var(--fashion-transition) !important;
+  cursor: pointer !important;
+}
+
+.fashion-product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--fashion-shadow-hover) !important;
+}
+
+.fashion-product-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  transition: var(--fashion-transition);
+}
+
+.fashion-product-image:hover {
+  transform: scale(1.05);
+}
+
+/* Header Styles */
+.fashion-header {
+  background: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(10px) !important;
+  border-bottom: 1px solid rgba(232, 180, 184, 0.1) !important;
+}
+
+/* Hero Section */
+.fashion-hero {
+  background: var(--fashion-gradient-light);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.fashion-hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+.fashion-hero-subtitle {
+  font-size: clamp(1.1rem, 2vw, 1.3rem);
+  color: var(--fashion-gray-medium);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.fashion-animate-fade-up {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.fashion-animate-fade-left {
+  animation: fadeInLeft 0.8s ease-out;
+}
+
+.fashion-animate-fade-right {
+  animation: fadeInRight 0.8s ease-out;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .fashion-hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .fashion-hero-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .fashion-product-image {
+    height: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .fashion-hero-title {
+    font-size: 2rem;
+  }
+  
+  .fashion-hero-subtitle {
+    font-size: 1rem;
+  }
+  
+  .fashion-product-image {
+    height: 200px;
+  }
+}
+
+/* Utility Classes */
+.fashion-text-gradient {
+  background: var(--fashion-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.fashion-bg-light {
+  background-color: var(--fashion-gray-light);
+}
+
+.fashion-spacing-section {
+  padding: 80px 0;
+}
+
+@media (max-width: 768px) {
+  .fashion-spacing-section {
+    padding: 60px 0;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--fashion-gray-light);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--fashion-primary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--fashion-primary-dark);
+}
+
